@@ -46,9 +46,9 @@ int main (int argc, char **argv){
     h = 0; 
     t = -1; b = 0; p = 0; 
 	code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 6;     //INT 0 6 
-    code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = 1;     //LIT 0 1
+    	code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = 1;     //LIT 0 1
 	code[ 2].f = 3;     code[ 2].l = 0;     code[ 2].a = 3;     //STO 0 3
-    code[ 3].f = 0;     code[ 3].l = 0;     code[ 3].a = 5;     //LIT 0 5 
+    	code[ 3].f = 0;     code[ 3].l = 0;     code[ 3].a = 5;     //LIT 0 5 
 	code[ 4].f = 3;     code[ 4].l = 0;     code[ 4].a = 4;     //STO 0 4
 	code[ 5].f = 2;     code[ 5].l = 0;     code[ 5].a = 4;     //LOD 0 4 
 	code[ 6].f = 2;     code[ 6].l = 0;     code[ 6].a = 3;     //LOD 0 3
