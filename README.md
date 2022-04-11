@@ -38,7 +38,6 @@ Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual tam
 * pcode-mult.c -> calcula a multiplicação de dois valores, no exemplo está calculando 4 * 7, tais valores podem ser modificados nas linhas 48  e 50 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
 * pcode-quad5pos.c -> calcula a soma do quadrado dos 5 primeiros numeros inteiros positivos;
 * pcode-sum5pos.c -> calcula a soma dos 5 primeiros numeros inteiros positivos;
-* pcode-fact3.c -> calcula o fatorial de  3.
 
 ## Brookshear
 O arquivo brookshear.c contém o algoritmo em C descrito por Glenn Brookshear no apêndice C do livro ```Ciência da Computação: uma visão abrangente```. A máquina contém 16 registradores de 8 bits de comprimento, memória principal com 256 células e 12 instruções de máquina apresentadas a seguir:
@@ -109,4 +108,4 @@ A máquina possui posições da memória e registradores reservados pela máquin
 * Registradores ```0``` à ```4``` e registrador ```9``` são utilizados nas funções;
 * Registradores ```f9``` à ```ff``` são utilizados para auxiliar na manipulação dos registros de ativação.
 
-Para exemplificar o funcionamento da máquina no arquivo fibonacci-recursivo.c encontra-se um código que executa o algoritmo fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33 (apenas altere o valor da variável ```a```).
+Para exemplificar o funcionamento da máquina, no arquivo fibonacci-recursivo.c encontra-se um código que executa o algoritmo fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33 (apenas altere o valor da variável ```a```).
