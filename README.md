@@ -1,5 +1,5 @@
-# BSPM
-Este repositório contém 3 pastas que serão descritas a seguir.
+# VM
+Este repositório contém 3 pastas, seus conteúdos serão descritos a seguir.
 ## Pcode
 O arquivo pcode.c contém o algoritmo em C da máquina virtual especificada por Nicklaus Wirth, que pode ser encontrada na linguagem pascal na [Wikipedia](https://en.wikipedia.org/wiki/P-code_machine). A máquina permite a execução de no máximo 50 instruções e contém 3 registradores:
 - contador do programa: p;
@@ -15,7 +15,6 @@ O conjunto de instruções de máquina possui 8 instruções:
 6. int 0, a: incrementa o registrador de topo de pilha por a;
 7. jmp 0, a: pula para a posição a;
 8. jpc 0, a: pula condicionalmente para a posição a.
-
 
 As operações permitidas na instrução 2 são:
 1. rtn: retorna a chamada anterior;
@@ -33,10 +32,10 @@ As operações permitidas na instrução 2 são:
 13. gtr: verifica se o penultimo valor da pilha é maior que ao valor do topo da pilha;
 14. geq: verifica se o penultimo valor da pilha é maior ou igual ao valor do topo da pilha;
 
-Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos armazenados na memória RAM que calculam alguns valores. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
-* pcode1p2m3.c -> calcula a multiplicação de dois valores e a adição de um terceiro valor a esse resultado, no caso esá calculando 2 * 3 + 1, tais valores podem ser modificados nas linhas 48, 50 e 56 alterando os números inseridos no code[x].a pelos valores desejados;
+Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+* pcode1p2m3.c -> calcula a multiplicação de dois valores e a adição de um terceiro valor a esse resultado, no exemplo está calculando 2 * 3 + 1, tais valores podem ser modificados nas linhas 48, 50 e 56 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
 * pcode-fact5.c -> calcula o fatorial de 5;
-* pcode-mult.c -> calcula a multiplicação de dois valores, no caso esá calculando 4 *7, tais valores podem ser modificados nas linhas 48  e 50 alterando os números inseridos no code[x].a pelos valores desejados;
+* pcode-mult.c -> calcula a multiplicação de dois valores, no exemplo está calculando 4 * 7, tais valores podem ser modificados nas linhas 48  e 50 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
 * pcode-quad5pos.c -> calcula a soma do quadrado dos 5 primeiros numeros inteiros positivos;
 * pcode-sum5pos.c -> calcula a soma dos 5 primeiros numeros inteiros positivos;
 * pcode-fact3.c -> calcula o fatorial de  3.
@@ -56,18 +55,23 @@ O arquivo brookshear.c contém o algoritmo em C descrito por Glenn Brookshear no
 11. JUMP RXY: salta para a instrução localizada na posição de memória de endereço XY se o padrão de bits do registrador R coincidir com o padrão de bits do registrador 0.
 12. HALT 000: para a execução.
 
-Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos armazenados na memória RAM que calculam alguns valores. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+Cada instrução contém 16 bits de comprimento, logo para cada instrução deve-se rezervar duas duas posições da memória.
+
+Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos armazenados na memória RAM que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
 - fatorial(3).c: calcula o fatorial de 3;
 - soma5intpos.c: calcula a soma dos primeiros 5 inteiros positivos;
 - soma-cubo-5intpos.c: calcula a soma do cubo dos 5 primeiros inteiros positivos;
 - soma-quad-5intpos.c: calcula a soma do quadrado dos 5 primeiros inteiros positivos.
 
 ## BSPM
-O arquivo BSPM.c contém o algoritmo de uma máquina virtual desenvolvida pelo autor sobre orientação do Prof. Dr. César Alberto Bravo Pariente, que engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth. As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits.
+O arquivo BSPM.c contém o algoritmo de uma máquina virtual desenvolvida pelo autor sobre orientação do Prof. Dr. César Alberto Bravo Pariente, professor adjunto da Universidade Estadual de Santa Cruz, que engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
+
+As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits.
 
 A máquina também apresenta um sistema de chamada e retorno de subrotina baseado na instância de registro de ativação descrito por Sebesta no livro ```Concepts of Programming Languages```. 
 
-Para escrever um código aceito pela máquina deve-se armazenar todas as instruções na memória principal e começar utilizando as seguintes instruções:
+Cada instrução de máquina possui 64 bits de comprimento, portanto deve-se reservar duas posições da memória para cada instrução.
+Para escrever um código aceito pela máquina deve-se armazenar todas as instruções na memória principal e começar com o seguinte trecho:
 ```
     RAM[ 0x0] = 0x000200fa;           RAM[ 0x1] = 0x00000005;       //RAM[ 0x0]: LOAD  0a 02   // REG[0xfa] <- 5
     RAM[ 0x2] = 0x000200fb;           RAM[ 0x3] = 0xfffffffb;       //RAM[ 0x2]: LOAD  fb -5   // REG[0xfb] <- -5
@@ -76,7 +80,7 @@ Para escrever um código aceito pela máquina deve-se armazenar todas as instru�
     RAM[ 0x8] = 0x000200ff;           RAM[ 0x9] = 0x0000fc0b;       //RAM[ 0x8]: LOAD  ff fc0b // REG[0xff] <- 0xfc0b // posicao param
     RAM[ 0xa] = 0x000200fc;           RAM[ 0xb] = 0x0000fc0c;       //RAM[ 0xa]: LOAD  fc fc0c // REG[0xfc] <- 0xfc0c // posicao result
 ```
-Tais instruções reservam as posições iniciais para o registro de instrução que armazena a posição de retorno da chamada, os parametros da função e o resultado da função; as primeiras duas instruções armazenam nos registradores ```fa``` e ```fb``` (em hexadecimal) os valores 5 e -5 que auxiliam na adição de um registro de ativação na pilha e na remoção de um registro de chamada da pilha.
+As instruções apresentadas reservam as posições iniciais para o registro de ativação que armazena a posição de retorno da chamada, os parametros da função e o resultado da função; as primeiras duas instruções armazenam nos registradores ```fa``` e ```fb``` (em hexadecimal) os valores 5 e -5 que auxiliam na adição de um registro de ativação na pilha e na remoção de um registro de chamada da pilha.
 
 Para fazer a chamada a alguma função que está armazenada na memória RAM deve-se adicionar as instruções abaixo:
 
