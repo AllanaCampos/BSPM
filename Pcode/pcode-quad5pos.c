@@ -45,8 +45,8 @@ int main (int argc, char **argv){
     h = 0; 
     t = -1; b = 0; p = 0; 
     
-    code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 5;     //INT 0 5 
-    code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = 1;     //LIT 0 1
+    	code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 5;     //INT 0 5 
+    	code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = 1;     //LIT 0 1
 	code[ 2].f = 3;     code[ 2].l = 0;     code[ 2].a = 3;     //STO 0 3
 	code[ 3].f = 2;     code[ 3].l = 0;     code[ 3].a = 3;     //LOD 0 3 
 	code[ 4].f = 2;     code[ 4].l = 0;     code[ 4].a = 3;     //LOD 0 3
@@ -66,7 +66,7 @@ int main (int argc, char **argv){
 	code[18].f = 3;     code[18].l = 0;     code[18].a = 4;     //STO 0 4
 	code[19].f = 2;     code[19].l = 0;     code[19].a = 4;     //LOD 0 4
 	code[20].f = 2;     code[20].l = 0;     code[20].a = 4;     //LOD 0 4
-	code[21].f = 1;     code[21].l = 0;     code[21].a = 4; 	//OPR 0 4
+	code[21].f = 1;     code[21].l = 0;     code[21].a = 4;     //OPR 0 4
 	code[22].f = 3;     code[22].l = 0;     code[22].a = 4;     //STO 0 4
 	code[23].f = 2;     code[23].l = 0;     code[23].a = 3;     //LOD 0 3
 	code[24].f = 2;     code[24].l = 0;     code[24].a = 3;     //LOD 0 3
