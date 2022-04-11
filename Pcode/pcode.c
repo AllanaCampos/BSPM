@@ -1,7 +1,7 @@
 
 /*
     Author: Gustavo B. Fragoso
-    2021-10-26: Updated by Allana Campos passing as input fixed values for the multiplication of two values
+    2021-10-26: Updated by Allana Campos 
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -45,45 +45,7 @@ int main (int argc, char **argv){
     // Parametros
     h = 0; 
     t = -1; b = 0; p = 0; 
-	code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 6;     //INT 0 6 
-    code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = 1;     //LIT 0 1
-	code[ 2].f = 3;     code[ 2].l = 0;     code[ 2].a = 3;     //STO 0 3
-    code[ 3].f = 0;     code[ 3].l = 0;     code[ 3].a = 5;     //LIT 0 5 
-	code[ 4].f = 3;     code[ 4].l = 0;     code[ 4].a = 4;     //STO 0 4
-	code[ 5].f = 2;     code[ 5].l = 0;     code[ 5].a = 4;     //LOD 0 4 
-	code[ 6].f = 2;     code[ 6].l = 0;     code[ 6].a = 3;     //LOD 0 3
-	code[ 7].f = 1;     code[ 7].l = 0;     code[ 7].a = 3;     //OPR 0 3 sub
-	code[ 8].f = 3;     code[ 8].l = 0;     code[ 8].a = 5;     //STO 0 5
-	code[ 9].f = 2;     code[ 9].l = 0;     code[ 9].a = 4;     //LOD 0 4 
-	code[10].f = 2;     code[10].l = 0;     code[10].a = 5;     //LOD 0 5
-	code[11].f = 1;     code[11].l = 0;     code[11].a = 4;     //OPR 0 4 mul
-	code[12].f = 3;     code[12].l = 0;     code[12].a = 4;     //STO 0 4
-	code[13].f = 2;     code[13].l = 0;     code[13].a = 5;     //LOD 0 5
-	code[14].f = 2;     code[14].l = 0;     code[14].a = 3;     //LOD 0 3
-	code[15].f = 1;     code[15].l = 0;     code[15].a = 3;     //OPR 0 3 sub
-	code[16].f = 3;     code[16].l = 0;     code[16].a = 5;     //STO 0 5
-	code[17].f = 2;     code[17].l = 0;     code[17].a = 4;     //LOD 0 4
-	code[18].f = 2;     code[18].l = 0;     code[18].a = 5;     //LOD 0 5
-	code[19].f = 1;     code[19].l = 0;     code[19].a = 4;     //OPR 0 4 mul
-	code[20].f = 3;     code[20].l = 0;     code[20].a = 4;     //STO 0 4
-	code[21].f = 2;     code[21].l = 0;     code[21].a = 5;     //LOD 0 5
-	code[22].f = 2;     code[22].l = 0;     code[22].a = 3;     //LOD 0 3
-	code[23].f = 1;     code[23].l = 0;     code[23].a = 3;     //OPR 0 3 sub
-	code[24].f = 3;     code[24].l = 0;     code[24].a = 5;     //STO 0 5
-	code[25].f = 2;     code[25].l = 0;     code[25].a = 4;     //LOD 0 4 
-	code[26].f = 2;     code[26].l = 0;     code[26].a = 5;     //LOD 0 5
-	code[27].f = 1;     code[27].l = 0;     code[27].a = 4;     //OPR 0 4 mul
-	code[28].f = 3;     code[28].l = 0;     code[28].a = 4;     //STO 0 4
-	code[29].f = 2;     code[29].l = 0;     code[29].a = 5;     //LOD 0 5
-	code[30].f = 2;     code[30].l = 0;     code[30].a = 3;     //LOD 0 3
-	code[31].f = 1;     code[31].l = 0;     code[31].a = 3;     //OPR 0 3 sub
-	code[32].f = 3;     code[32].l = 0;     code[32].a = 5;     //STO 0 5
-	code[33].f = 2;     code[33].l = 0;     code[33].a = 4;     //LOD 0 4 
-	code[34].f = 2;     code[34].l = 0;     code[34].a = 5;     //LOD 0 5
-	code[35].f = 1;     code[35].l = 0;     code[35].a = 4;     //OPR 0 4 mul
-	code[36].f = 3;     code[36].l = 0;     code[36].a = 4;     //STO 0 4
-	code[37].f = 1;     code[37].l = 0;     code[37].a = 0;     //OPR 0 0 rtn
-	//END 0 0
+	
 
     printf("%3s %3s %3s %3s %3s ","f","l","a","t","p");
     for(h = 0; h <22; h++) {
