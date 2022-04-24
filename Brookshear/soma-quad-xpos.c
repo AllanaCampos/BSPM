@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     unsigned char op;        // operacao
@@ -25,31 +24,12 @@ uint8_t sum_comp2(uint8_t val1, int val2);
 uint8_t sum_flut(uint8_t val1, int val2);
 uint8_t rot(uint8_t val1, uint8_t val2);
 uint8_t trans(uint8_t val1, uint8_t val2);
-void sum(int aa);
 Tinstruction transformInstruction(uint8_t a, uint8_t b);
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    int aa = 1;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(aa < 9){
-        t_ini = time(NULL); 
-        sum(aa);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", aa, trec );
-        aa++;
-    }
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-void sum (int aa){
+	int aa = 5;
 	printf("start                   registradores\n");
-    // Parametros
-    h = 0; p=0;
-	RAM[ 0x0] = 0x20; 		   RAM[ 0x1] = 0x05;      //RAM[ 0x0]: 2005 LOAD 0 05
+   	h = 0; p=0;
+	RAM[ 0x0] = 0x20; 	   RAM[ 0x1] = 0x05;      //RAM[ 0x0]: 2005 LOAD 0 05
 	RAM[ 0x2] = 0x21;          RAM[ 0x3] = 0x01;      //RAM[ 0x2]: 2101 LOAD 1 01
 	RAM[ 0x4] = 0x22;          RAM[ 0x5] = 0x01;      //RAM[ 0x4]: 2101 LOAD 2 01
 	RAM[ 0x6] = 0x2f;          RAM[ 0x7] = 0x01;      //RAM[ 0x6]: 2f01 LOAD f 01
@@ -134,6 +114,7 @@ void sum (int aa){
         printf(" %8x", h);
     }
     printf("\nend                     registradores\n");
+    return 0;
 }
 
 uint8_t sum_comp2(uint8_t val1, int val2){
