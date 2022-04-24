@@ -119,10 +119,10 @@ A máquina possui posições da memória e registradores reservados pela máquin
 * Registradores ```f9``` à ```ff``` são utilizados para auxiliar na manipulação dos registros de ativação.
 
 Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquina e serão descritos abaixo:
-* fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 64 (apenas altere o valor da variável ```a```);
-* fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33 (apenas altere o valor da variável ```a```);
-* fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 70 (apenas altere o valor da RAM[0xd]);
-* fartorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 70 (apenas altere o valor da RAM[0xd]);
-* soma5intpos.c: calcula a soma dos primeiros 5 inteiros positivos;
-* soma-cubo-5intpos.c: calcula a soma do cubo dos 5 primeiros inteiros positivos;
-* soma-quad-5intpos.c: calcula a soma do quadrado dos 5 primeiros inteiros positivos.
+* fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 29(apenas altere o valor da variável ```a```);
+* fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 32(apenas altere o valor da variável ```a```);
+* fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
+* fartorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
+* somaxpos.c: calcula a soma dos primeiros x inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```);
+* soma-cubo-xpos.c: calcula a soma do cubo dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
+* soma-quad-xpos.c: calcula a soma do quadrado dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```);
