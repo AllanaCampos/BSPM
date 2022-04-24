@@ -29,7 +29,7 @@ int main(){
 	int aa = 5;
 	printf("start                   registradores\n");
    	h = 0; p=0;
-	RAM[ 0x0] = 0x20; 	   RAM[ 0x1] = 0x05;      //RAM[ 0x0]: 2005 LOAD 0 05
+	RAM[ 0x0] = 0x20; 	   RAM[ 0x1] = aa;        //RAM[ 0x0]: 2005 LOAD 0 05
 	RAM[ 0x2] = 0x21;          RAM[ 0x3] = 0x01;      //RAM[ 0x2]: 2101 LOAD 1 01
 	RAM[ 0x4] = 0x22;          RAM[ 0x5] = 0x01;      //RAM[ 0x4]: 2101 LOAD 2 01
 	RAM[ 0x6] = 0x2f;          RAM[ 0x7] = 0x01;      //RAM[ 0x6]: 2f01 LOAD f 01
