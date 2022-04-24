@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     unsigned char op;        // operacao
@@ -25,31 +24,12 @@ uint8_t sum_comp2(uint8_t val1, int val2);
 uint8_t sum_flut(uint8_t val1, int val2);
 uint8_t rot(uint8_t val1, uint8_t val2);
 uint8_t trans(uint8_t val1, uint8_t val2);
-void sum(int aa);
 Tinstruction transformInstruction(uint8_t a, uint8_t b);
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    int aa = 1;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(aa < 6){
-        t_ini = time(NULL); 
-        sum(aa);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", aa, trec );
-        aa++;
-    }
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-void sum (int aa){
+	int aa =5;
 	printf("start                   registradores\n");
-    // Parametros
-    h = 0; p=0;
-    //operador&operando1        operando2&operando3
+    	h = 0; p=0;
+    	//operador&operando1        operando2&operando3
 	RAM[ 0x0] = 0x20;          	RAM[ 0x1] = aa;      	//RAM[ 0x0]: 2003 LOAD 0 05
 	RAM[ 0x2] = 0x21;          	RAM[ 0x3] = 0x01;      	//RAM[ 0x2]: 2101 LOAD 1 01
 	RAM[ 0x4] = 0x22;          	RAM[ 0x5] = 0x01;      	//RAM[ 0x4]: 2101 LOAD 2 01
@@ -87,7 +67,7 @@ void sum (int aa){
 	RAM[0x44] = 0xb3;        	RAM[0x45] = 0x2e;    	//RAM[0x44]: b32e JUMP 3 2e
 	RAM[0x46] = 0x10;          	RAM[0x47] = 0x64;      	//RAM[0x46]: 1064 LOAD 0 64
 	RAM[0x48] = 0xbd;      		RAM[0x49] = 0x3a;    	//RAM[0x48]: bd3a JUMP d 3a
-	RAM[0x4a] = 0x5d;        	RAM[0x4b] = 0xdf;  		//RAM[0x4a]: 5ddf ADD d df
+	RAM[0x4a] = 0x5d;        	RAM[0x4b] = 0xdf;  	//RAM[0x4a]: 5ddf ADD d df
 	RAM[0x4c] = 0x11;          	RAM[0x4d] = 0x63;      	//RAM[0x4c]: 1163 LOAD 1 63
 	RAM[0x4e] = 0x31;          	RAM[0x4f] = 0x63;      	//RAM[0x4e]: 3163 STORE 1 63
 	RAM[0x50] = 0xbe;      		RAM[0x51] = 0x18;      	//RAM[0x50]: be18 JUMP e 18
@@ -146,6 +126,7 @@ void sum (int aa){
         printf(" %8x", h);
     }
     printf("\nend                     registradores\n");
+    return 0;
 }
 
 uint8_t sum_comp2(uint8_t val1, int val2){
