@@ -124,7 +124,7 @@ A máquina possui posições da memória e registradores reservados pela máquin
 * Registradores ```f9``` à ```ff``` são utilizados para auxiliar na manipulação dos registros de ativação.
 
 Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquina e serão descritos abaixo:
-* allanaVM -> contém a estrutura da máquina;
+* allanaVM.c -> contém a estrutura da máquina;
 * fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 29(apenas altere o valor da variável ```a```);
 * fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 32(apenas altere o valor da variável ```a```);
 * fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
