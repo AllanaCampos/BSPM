@@ -4,7 +4,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     uint32_t op;        // operacao
@@ -12,8 +11,6 @@ typedef struct{
     uint32_t opr2;      // operando2
     uint32_t opr3;      // operando3
 } Tinstruction;     
-
-
 
 // List of available instructions
 char * instructionString[] = { "LOAD", "LOAD", "STORE", "MOVE", "ADD", "ADD", "OR", "AND", "EXCLS", "ROTAT", "JUMP", "HALT", "NEG", "MULT"};
@@ -28,37 +25,15 @@ uint32_t neg(uint32_t val1);
 uint32_t mult(uint32_t val1, uint32_t val2);
 uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
-void fact(uint32_t val1);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    uint32_t f = 2;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(f < 205){
-        t_ini = time(NULL); 
-        fact(f);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", f, trec );
-        f *= 2;
-    }
-    printf("%d", f);
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void fact(uint32_t a){
-    //uint32_t a = 0x00000005;
+    uint32_t a = 0x00000005;
     uint32_t RAM[65536]; // ffff
     uint32_t reg[65536]; // registradores
     Tinstruction i;
     printf("start                   \n");
     // Parametros
-    
     //operador&operando1        operando2&operando3
     
     RAM[ 0x0] = 0x000200fa;           RAM[ 0x1] = 0x00000005;       //RAM[ 0x0]: LOAD  0a 02   // REG[0xfa] <- 5
