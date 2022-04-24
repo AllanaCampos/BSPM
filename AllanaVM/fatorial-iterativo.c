@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     uint32_t op;        // operacao
@@ -11,7 +10,6 @@ typedef struct{
     uint32_t opr2;      // operando2
     uint32_t opr3;      // operando3
 } Tinstruction;     
-
 
 
 // List of available instructions
