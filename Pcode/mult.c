@@ -5,7 +5,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<time.h>
 #define MAX_INSTRUCTIONS 50 // Define your own
 #define STACKSIZE 1024
 
@@ -39,36 +38,15 @@ void stackOperation(int a);
 int base(int l);
 int getInstructionCode(char *c);
 char * getInstructionName(int inst);
-void pcode(int aa, int ab);
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    int aa = 2, ab = 4;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(aa < 4097){
-        t_ini = time(NULL); 
-        pcode(aa, ab);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%d\t%f\n", aa, ab, trec );
-        aa*=2;
-        ab*=2;
-    }
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void pcode (int aa, int ab){
+	int aa = 2, int ab = 4;
 	printf("start pl/0           stack\n");
-    // Parametros
-    h = 0; 
-    t = -1; b = 0; p = 0; 
-    code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 6;     //INT 0 6
-    code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = aa;    //LIT 0 4
+    	h = 0; 
+    	t = -1; b = 0; p = 0; 
+    	code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 6;     //INT 0 6
+    	code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = aa;    //LIT 0 4
 	code[ 2].f = 3;     code[ 2].l = 0;     code[ 2].a = 3;     //STO 0 3
-    code[ 3].f = 0;     code[ 3].l = 0;     code[ 3].a = ab;    //LIT 0 7 
+    	code[ 3].f = 0;     code[ 3].l = 0;     code[ 3].a = ab;    //LIT 0 7 
 	code[ 4].f = 3;     code[ 4].l = 0;     code[ 4].a = 4;     //STO 0 4
 	code[ 5].f = 2;     code[ 5].l = 0;     code[ 5].a = 3;     //LOD 0 3
 	code[ 6].f = 2;     code[ 6].l = 0;     code[ 6].a = 4;     //LOD 0 4
@@ -140,6 +118,7 @@ void pcode (int aa, int ab){
     for(h = 0; h <22; h++) {
         printf(" %3d" , h);
     }
+    return 0;
 }
 
 
