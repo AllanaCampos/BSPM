@@ -88,28 +88,28 @@ int main (){
 				switch (i.a) { 
 					// RTN, NEG, ADD, SUB, MUL, DIV, ODD, MOD, EQL, NEQ, LSS, LEQ, GTR, GEQ
 					// 0	1	 2	  3	   4	5	 6	  7    8	9	 10	  11   12	13
-					case RTN: t = b - 1; p = s[t+3]; b = s[t+2]; break;
-					case NEG: s[t]= -s[t]; break;
-					case ADD: t--; s[t] += s[t+1]; break;
-					case SUB: t--; s[t] -= s[t+1]; break;
-					case MUL: t--; s[t] *= s[t+1]; break;
-					case DIV: t--; s[t] /= s[t+1]; break;
-					case MOD: t--; s[t] %= s[t+1]; break;
-					case ODD: s[t] = (s[t]%2 == 1); break;
-					case EQL: t--; s[t] = (s[t] == s[t+1]); break;
-					case NEQ: t--; s[t] = (s[t] != s[t+1]); break;
-					case LSS: t--; s[t] = (s[t] < s[t+1]); break;
-					case LEQ: t--; s[t] = (s[t] <= s[t+1]); break;
-					case GTR: t--; s[t] = (s[t] > s[t+1]); break;
-					case GEQ: t--; s[t] = (s[t] >= s[t+1]); break;
+					case 0: t = b - 1; p = s[t+3]; b = s[t+2]; break;
+					case 1: s[t]= -s[t]; break;
+					case 2: t--; s[t] += s[t+1]; break;
+					case 3: t--; s[t] -= s[t+1]; break;
+					case 4: t--; s[t] *= s[t+1]; break;
+					case 5: t--; s[t] /= s[t+1]; break;
+					case 6: t--; s[t] %= s[t+1]; break;
+					case 7: s[t] = (s[t]%2 == 1); break;
+					case 8: t--; s[t] = (s[t] == s[t+1]); break;
+					case 9: t--; s[t] = (s[t] != s[t+1]); break;
+					case 10: t--; s[t] = (s[t] < s[t+1]); break;
+					case 11: t--; s[t] = (s[t] <= s[t+1]); break;
+					case 12: t--; s[t] = (s[t] > s[t+1]); break;
+					case 13: t--; s[t] = (s[t] >= s[t+1]); break;
 					}
 				break;
 			case LOD: t++; s[t] = s[ base(i.l) + i.a ]; break;
 			case STO: s[ base(i.l) + i.a ] = s[t]; t--; break;
 			case CAL: s[t+1] = base( i.l ); s[t+2] = b; s[t+3] = p; b = t+1; p = i.a; break;
 			case INT: t += i.a; break;
-			case JMP: p = i.a-1; break; //CHECAR
-			case JPC: if ( s[t] == 0 ) { p = i.a-1; } t--; break; //CHECAR
+			case JMP: p = i.a; break; 
+			case JPC: if ( s[t] == 0 ) { p = i.a; } t--; break; 
 		}
 			
 		// PrintStackTrace
