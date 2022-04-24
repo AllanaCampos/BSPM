@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     uint32_t op;        // operacao
@@ -11,8 +10,6 @@ typedef struct{
     uint32_t opr2;      // operando2
     uint32_t opr3;      // operando3
 } Tinstruction;     
-
-
 
 // List of available instructions
 char * instructionString[] = { "LOAD", "LOAD", "STORE", "MOVE", "ADD", "ADD", "OR", "AND", "EXCLS", "ROTAT", "JUMP", "HALT", "NEG", "MULT"};
@@ -27,31 +24,10 @@ uint32_t neg(uint32_t val1);
 uint32_t mult(uint32_t val1, uint32_t val2);
 uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
-void sum(uint32_t val);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    uint32_t f = 2;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(f < 4096){
-        t_ini = time(NULL); 
-        sum(f);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", f, trec );
-        f *= 2;
-    }
-    printf("%d", f);
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-
-void sum(uint32_t a){
+    uint32_t 0x00000005;
     uint32_t RAM[65536]; // ffff
     uint32_t reg[65536]; // registradores
     Tinstruction i;
@@ -69,7 +45,7 @@ void sum(uint32_t a){
     RAM[ 0xc] = 0x0002000f;           RAM[ 0xd] = 0x00000001;       //RAM[ 0xc]: LOAD  0f a    // REG[0x0f] <- a      // Parametros
     RAM[ 0xe] = 0x00040000;           RAM[ 0xf] = 0x000f0004;       //MOVE
     RAM[0x10] = 0x00020005;           RAM[0x11] = 0x00000001;       //LOAD
-    RAM[0x12] = 0x00020000;           RAM[0x13] = a;       //RAM[ 0xe]: LOAD  0e 01   // REG[0x0e] <- 0x0001 // Parametros
+    RAM[0x12] = 0x00020000;           RAM[0x13] = a;                //RAM[ 0xe]: LOAD  0e 01   // REG[0x0e] <- 0x0001 // Parametros
     RAM[0x14] = 0x000b000f;           RAM[0x15] = 0x0000001c;       //JUMP
     RAM[0x16] = 0x0005000f;           RAM[0x17] = 0x000f0005;       //ADD
     RAM[0x18] = 0x00050004;           RAM[0x19] = 0x0004000f;       //ADD
@@ -387,21 +363,8 @@ void sum(uint32_t a){
         if(p > 0xfbf2 && p <= 0xfc06){
                 stop = stop - 5;
             }
-        /*for(int h = 0x0000fc0e; h <= stop; h+=5){
-            if(RAM[h]<=0x1c || (RAM[h]>=0x42 && RAM[h]<=0x54)){
-                printf(" %5x %5x %5x %5x", RAM[h], RAM[h+1], RAM[h+2], RAM[h+3]);
-            }
-             printf(" %5x %5x %5x %5x", RAM[h], RAM[h+1], RAM[h+2], RAM[h+3]);
-        }
-        printf("\n");*/
         for (int h = 0; h < 16; h++) {
-           /*int aux = reg[h];
-            for(int j = 7; j > -1; j--) {
-                if ( (aux/pow(2, j)) >= 1 ) { aux -= pow(2, j); printf("1"); }
-                else { printf("0"); }
-            }
-            printf(" ");
-            //*/printf(" %8d", reg[h]);
+           printf(" %8d", reg[h]);
         }
         printf("\n");
         
@@ -411,6 +374,7 @@ void sum(uint32_t a){
     printf("\n");
     printf("%5s %5s %5s %5s %24s %24s %24s %24s %24s %24s","op","opr1","opr2","opr3", "ARI1", "ARI2", "ARI3", "ARI4", "ARI5", "ARI6");
     printf("\nend                     \n");
+    return 0;
 }
 
 
