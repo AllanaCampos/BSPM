@@ -27,32 +27,10 @@ uint32_t neg(uint32_t val1);
 uint32_t mult(uint32_t val1, uint32_t val2);
 uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
-void fact(uint32_t val1);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
-
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    uint32_t f = 2;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(f < 513){
-        t_ini = time(NULL); 
-        fact(f);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", f, trec );
-        f *= 2;
-    }
-    printf("%d", f);
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void fact(uint32_t a){
-    //uint32_t a = 0x00000005;
+    uint32_t a = 0x00000005;
     uint32_t RAM[65536]; // ffff
     uint32_t reg[65536]; // registradores
     Tinstruction i;
@@ -417,6 +395,7 @@ void fact(uint32_t a){
     printf("\n");
     printf("%5s %5s %5s %5s %24s %24s %24s %24s %24s %24s","op","opr1","opr2","opr3", "ARI1", "ARI2", "ARI3", "ARI4", "ARI5", "ARI6");
     printf("\nend                     \n");
+    return 0;
 }
 
 
