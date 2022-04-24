@@ -28,15 +28,13 @@ uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
-
-int rec(uint32_t a){
-	//uint32_t a = 0x00000005;
-	uint32_t RAM[65536]; // ffff
+int main(){
+    uint32_t a = 0x00000005;
+    uint32_t RAM[65536]; // ffff
     uint32_t reg[65536]; // registradores
     Tinstruction i;
     printf("start                   \n");
     // Parametros
-    
     //operador&operando1        operando2&operando3
     
     RAM[ 0x0] = 0x000200fa;           RAM[ 0x1] = 0x00000005;       //RAM[ 0x0]: LOAD  0a 02   // REG[0xfa] <- 5
@@ -418,6 +416,7 @@ int rec(uint32_t a){
     printf("\n");
     printf("%5s %5s %5s %5s %24s %24s %24s %24s %24s %24s","op","opr1","opr2","opr3", "ARI1", "ARI2", "ARI3", "ARI4", "ARI5", "ARI6");
     printf("\nend                     \n");
+    return 0;
 }
 
 
