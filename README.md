@@ -67,10 +67,11 @@ Cada instrução contém 16 bits de comprimento, logo para cada instrução deve
 
 Os arquivos presentes na pasta contém o algoritmo da máquina virtual e códigos armazenados na memória RAM que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
 - brookshear.c: contém a estrutura da máquina;
-- fatorial(3).c: calcula o fatorial de 3;
-- soma5intpos.c: calcula a soma dos primeiros 5 inteiros positivos;
-- soma-cubo-5intpos.c: calcula a soma do cubo dos 5 primeiros inteiros positivos;
-- soma-quad-5intpos.c: calcula a soma do quadrado dos 5 primeiros inteiros positivos.
+- fatorial.c: calcula o fatorial do valor de entrada, como default está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```aa```);
+- fibonacci.c: calcula os valores da série de fibonacci, como entrada está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```aa```);
+- somaxpos.c: calcula a soma dos primeiros x inteiros positivos, como default está o valor 5, que pode ser alterado na linha 29 (apenas altere o valor da variável ```aa```);
+- soma-cubo-xpos.c: calcula a soma do cubo dos x primeiros inteiros positivos, como default está o valor 5, que pode ser alterado na linha 29 (apenas altere o valor da variável ```aa```);
+- soma-quad-xpos.c: calcula a soma do quadrado dos x primeiros inteiros positivos, como default está o valor 5, que pode ser alterado na linha 29 (apenas altere o valor da variável ```aa```).
 
 ## AllanaVM
 AllanaVM engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
@@ -119,6 +120,7 @@ A máquina possui posições da memória e registradores reservados pela máquin
 * Registradores ```f9``` à ```ff``` são utilizados para auxiliar na manipulação dos registros de ativação.
 
 Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquina e serão descritos abaixo:
+* allanaVM -> contém a estrutura da máquina;
 * fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 29(apenas altere o valor da variável ```a```);
 * fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 32(apenas altere o valor da variável ```a```);
 * fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
