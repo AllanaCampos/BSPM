@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     unsigned char op;        // operacao
@@ -25,34 +24,15 @@ uint8_t sum_comp2(uint8_t val1, int val2);
 uint8_t sum_flut(uint8_t val1, int val2);
 uint8_t rot(uint8_t val1, uint8_t val2);
 uint8_t trans(uint8_t val1, uint8_t val2);
-void fibonacci(int aa);
 Tinstruction transformInstruction(uint8_t a, uint8_t b);
 
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    int aa = 1;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(aa < 14){
-        t_ini = time(NULL); 
-        fibonacci(aa);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", aa, trec );
-        aa++;
-    }
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void fibonacci (int aa){
-	printf("start                   registradores\n");
+    int aa = 5;
+    printf("start                   registradores\n");
     // Parametros
     h = 0; p=0;
     //operador&operando1        operando2&operando3
-	RAM[ 0x0] = 0x20;           RAM[ 0x1] = aa;        //RAM[ 0x0]: 2003 LOAD 0 03
+    RAM[ 0x0] = 0x20;           RAM[ 0x1] = aa;        //RAM[ 0x0]: 2003 LOAD 0 03
     RAM[ 0x2] = 0x21;           RAM[ 0x3] = 0x01;       //RAM[ 0x2]: 2101 LOAD 1 01
     RAM[ 0x4] = 0x22;           RAM[ 0x5] = 0x00;       //RAM[ 0x4]: 2200 LOAD 2 00
     RAM[ 0x6] = 0x23;           RAM[ 0x7] = 0x01;       //RAM[ 0x6]: 2301 LOAD 3 01
@@ -118,6 +98,7 @@ void fibonacci (int aa){
         printf(" %8x", h);
     }
     printf("\nend                     registradores\n");
+    return 0;
 }
 
 uint8_t sum_comp2(uint8_t val1, int val2){
