@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     uint32_t op;        // operacao
@@ -24,30 +23,10 @@ uint32_t neg(uint32_t val1);
 uint32_t mult(uint32_t val1, uint32_t val2);
 uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
-void fibonacci_it(uint32_t a);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    uint32_t f = 0;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(f < 50){
-        t_ini = time(NULL); 
-        fibonacci_it(f);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", f, trec );
-        f++;
-    }
-    printf("%d", f);
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void fibonacci_it(uint32_t a){
+    uint32_t a = 0x00000005;
     uint32_t RAM[65536]; // ffff
     uint32_t reg[65536];  // registradores
     Tinstruction i;
@@ -413,6 +392,7 @@ void fibonacci_it(uint32_t a){
         printf(" %8x", h);
     }
     printf("\nend                     registradores\n");
+    return 0;
 }
 
 uint32_t sum_comp2(uint32_t val1, int val2){
