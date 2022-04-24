@@ -120,6 +120,16 @@ int main (){
 		}
 		printf("\n");
     } while (p != 0);
+    printf("--- --- --- --- --- ---");
+    for(h = 0; h <22; h++) {
+        printf(" ---");
+    }
+    printf("\n");
+    printf("%3s %3s %3s %3s %3s %3s","f","l","a","p","b","t");
+    for(h = 0; h <22; h++) {
+        printf(" %3d" , h);
+    }
+    printf("\nend pl/0                stack\n");
     return 0;
 }
 
