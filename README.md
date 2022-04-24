@@ -42,11 +42,15 @@ As operações permitidas na instrução 2 são:
 
 A pasta contem o algoritmo da Pcode em C e códigos que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
 * pcode.c -> contém a estrutura da máquina;
-* pcode1p2m3.c -> calcula a multiplicação de dois valores e a adição de um terceiro valor a esse resultado, no exemplo está calculando 2 * 3 + 1, tais valores podem ser modificados nas linhas 48, 50 e 56 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
-* pcode-fact5.c -> calcula o fatorial de 5;
-* pcode-mult.c -> calcula a multiplicação de dois valores, no exemplo está calculando 4 * 7, tais valores podem ser modificados nas linhas 48  e 50 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
-* pcode-quad5pos.c -> calcula a soma do quadrado dos 5 primeiros numeros inteiros positivos;
-* pcode-sum5pos.c -> calcula a soma dos 5 primeiros numeros inteiros positivos;
+* xPyTz.c -> calcula a multiplicação de dois valores e a adição de um terceiro valor a esse resultado, no exemplo está calculando 2 + 4 * 8, tais valores podem ser modificados na linha 42 (apenas altere o valor das variáveis ```aa```, ```ab``` e ```ac```);
+* fatorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 43 (apenas altere o valor da variável ```aa```);
+* fatorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 44 (apenas altere o valor da variável ```aa```);
+* fibonacci-iterativo.c -> calcula os valores da série de fibonacci iterativamente, como entrada está o valor 5, que pode ser alterado na linha 43 (apenas altere o valor da variável ```aa```);
+* fibonacci-recursivo.c -> calcula os valores da série de fibonacci recursivamente, como entrada está o valor 5, que pode ser alterado na linha 44 (apenas altere o valor da variável ```aa```);
+* mult.c -> calcula a multiplicação de dois valores, no exemplo está calculando 2 * 2, tais valores podem ser modificados na linha 42 (apenas altere o valor das variáveis ```aa``` e ```ab```);
+* sum-quad-xpos.c -> calcula a soma dos quadrados dos x primeiros inteiros positivos, como default está o valor 5, que pode ser alterado na linha 42 (apenas altere o valor da variável ```aa```);
+* sum-cub-xpos.c -> calcula a soma dos cubos dos x primeiros inteiros positivos, como default está o valor 5, que pode ser alterado na linha 42 (apenas altere o valor da variável ```aa```);
+* sumxpos.c -> calcula a soma dos x primeiros inteiros positivos, como default está o valor 5, que pode ser alterado na linha 42 (apenas altere o valor da variável ```aa```);
 
 ## Brookshear
 A máquina descrita por Brookshear contém 16 registradores de 8 bits de comprimento, memória principal com 256 células e 12 instruções de máquina apresentadas a seguir:
@@ -127,4 +131,4 @@ Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquin
 * fartorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
 * somaxpos.c: calcula a soma dos primeiros x inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```);
 * soma-cubo-xpos.c: calcula a soma do cubo dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
-* soma-quad-xpos.c: calcula a soma do quadrado dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```);
+* soma-quad-xpos.c: calcula a soma do quadrado dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```).
