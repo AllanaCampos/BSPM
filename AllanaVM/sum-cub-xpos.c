@@ -3,7 +3,6 @@
 #include<string.h>
 #include<inttypes.h>
 #include<math.h>
-#include<time.h>
 
 typedef struct{     
     uint32_t op;        // operacao
@@ -11,7 +10,6 @@ typedef struct{
     uint32_t opr2;      // operando2
     uint32_t opr3;      // operando3
 } Tinstruction;     
-
 
 
 // List of available instructions
@@ -27,31 +25,10 @@ uint32_t neg(uint32_t val1);
 uint32_t mult(uint32_t val1, uint32_t val2);
 uint32_t divide(uint32_t val1, uint32_t val2);
 uint32_t mod(uint32_t val1, uint32_t val2);
-void sum(uint32_t val);
 Tinstruction transformInstruction(uint32_t a, uint32_t b);
 
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    uint32_t f = 2;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(f < 2048){
-        t_ini = time(NULL); 
-        sum(f);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", f, trec );
-        f *= 2;
-    }
-    printf("%d", f);
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void sum(uint32_t a){
-    //uint32_t a = 0x00000005;
+    uint32_t a = 0x00000005;
     uint32_t RAM[65536]; // ffff
     uint32_t reg[65536]; // registradores
     Tinstruction i;
@@ -59,7 +36,6 @@ void sum(uint32_t a){
     // Parametros
     
     //operador&operando1        operando2&operando3
-    
     RAM[ 0x0] = 0x000200fa;           RAM[ 0x1] = 0x00000005;       //RAM[ 0x0]: LOAD  0a 02   // REG[0xfa] <- 5
     RAM[ 0x2] = 0x000200fb;           RAM[ 0x3] = 0xfffffffb;       //RAM[ 0x2]: LOAD  fb -5   // REG[0xfb] <- -5
     RAM[ 0x4] = 0x000200fe;           RAM[ 0x5] = 0x0000fc09;       //RAM[ 0x4]: LOAD  fe fc09 // REG[0xfe] <- 0xfc09 // posicao return
@@ -424,6 +400,7 @@ void sum(uint32_t a){
     printf("\n");
     printf("%5s %5s %5s %5s %24s %24s %24s %24s %24s %24s","op","opr1","opr2","opr3", "ARI1", "ARI2", "ARI3", "ARI4", "ARI5", "ARI6");
     printf("\nend                     \n");
+    return 0;
 }
 
 
