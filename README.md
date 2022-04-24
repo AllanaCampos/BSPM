@@ -1,7 +1,15 @@
 # VM
-Este repositório contém 3 pastas, seus conteúdos serão descritos a seguir.
+Este repositório contém 3 pastas, cada uma representando uma máquina virtual. 
+
+Na pasta Pcode contém a máquina virtual especificada por Nicklaus Wirth em C, a mesma pode ser encontrada na linguagem pascal em [https://en.wikipedia.org/wiki/P-code_machine](https://en.wikipedia.org/wiki/P-code_machine).
+
+Na pasta Brookshear encontra-se uma versão em C da máquina descrita por Glenn Brookshear no apêndice C do livro ```Ciência da Computação: Uma visão abrangente. Tradução Cheng Mei Lee. 7 ed. Porto Alegre: Bookman.```.
+
+Na pasta AllanaVM contém o algoritmo de uma máquina virtual desenvolvida pela autora sobre orientação do Prof. Dr. César Alberto Bravo Pariente, professor adjunto da Universidade Estadual de Santa Cruz, que engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
+
+Informações adicionais sobre cada máquina e o conteúdo de cada pasta pode ser visualizada a seguir.
 ## Pcode
-O arquivo pcode.c contém o algoritmo em C da máquina virtual especificada por Nicklaus Wirth, que pode ser encontrada na linguagem pascal na [Wikipedia](https://en.wikipedia.org/wiki/P-code_machine). A máquina permite a execução de no máximo 50 instruções e contém 3 registradores:
+A máquina Pcode permite a execução de no máximo 50 instruções e contém 3 registradores:
 - contador do programa: p;
 - registrador de base: b;
 - registrador de topo de pilha: t.
@@ -32,7 +40,8 @@ As operações permitidas na instrução 2 são:
 13. gtr: verifica se o penultimo valor da pilha é maior que ao valor do topo da pilha;
 14. geq: verifica se o penultimo valor da pilha é maior ou igual ao valor do topo da pilha;
 
-Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+A pasta contem o algoritmo da Pcode em C e códigos que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+* pcode.c -> contém a estrutura da máquina;
 * pcode1p2m3.c -> calcula a multiplicação de dois valores e a adição de um terceiro valor a esse resultado, no exemplo está calculando 2 * 3 + 1, tais valores podem ser modificados nas linhas 48, 50 e 56 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
 * pcode-fact5.c -> calcula o fatorial de 5;
 * pcode-mult.c -> calcula a multiplicação de dois valores, no exemplo está calculando 4 * 7, tais valores podem ser modificados nas linhas 48  e 50 alterando os números inseridos no ```code[x].a``` pelos valores desejados, onde x indica a posição na qual a instrução está armazenada;
@@ -40,7 +49,7 @@ Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual tam
 * pcode-sum5pos.c -> calcula a soma dos 5 primeiros numeros inteiros positivos;
 
 ## Brookshear
-O arquivo brookshear.c contém o algoritmo em C descrito por Glenn Brookshear no apêndice C do livro ```Ciência da Computação: uma visão abrangente```. A máquina contém 16 registradores de 8 bits de comprimento, memória principal com 256 células e 12 instruções de máquina apresentadas a seguir:
+A máquina descrita por Brookshear contém 16 registradores de 8 bits de comprimento, memória principal com 256 células e 12 instruções de máquina apresentadas a seguir:
 1. LOAD RXY: carrega o registrador R com o padrão de bits encontrado na posição de memória de endereço XY;
 2. LOAD RXY: carrega o registrador R com o padrão de bits XY;
 3. STORE RXY: armazena o padrão de bits encontrado no registrador R na posição de memória de endereço XY;
@@ -56,18 +65,19 @@ O arquivo brookshear.c contém o algoritmo em C descrito por Glenn Brookshear no
 
 Cada instrução contém 16 bits de comprimento, logo para cada instrução deve-se rezervar duas duas posições da memória.
 
-Nos demais arquivos da pasta além de conter o algoritmo da máquina virtual também encontram-se códigos armazenados na memória RAM que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+Os arquivos presentes na pasta contém o algoritmo da máquina virtual e códigos armazenados na memória RAM que exemplificam o funcionamento da máquina. Para cada arquivo será indicado sua funcionalidade nos pontos abaixo:
+- brookshear.c: contém a estrutura da máquina;
 - fatorial(3).c: calcula o fatorial de 3;
 - soma5intpos.c: calcula a soma dos primeiros 5 inteiros positivos;
 - soma-cubo-5intpos.c: calcula a soma do cubo dos 5 primeiros inteiros positivos;
 - soma-quad-5intpos.c: calcula a soma do quadrado dos 5 primeiros inteiros positivos.
 
-## BSPM
-O arquivo BSPM.c contém o algoritmo de uma máquina virtual desenvolvida pelo autor sobre orientação do Prof. Dr. César Alberto Bravo Pariente, professor adjunto da Universidade Estadual de Santa Cruz, que engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
+## AllanaVM
+AllanaVM engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
 
 As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits.
 
-A máquina também apresenta um sistema de chamada e retorno de subrotina baseado na instância de registro de ativação descrito por Sebesta no livro ```Concepts of Programming Languages```. 
+A máquina também apresenta um sistema de chamada e retorno de subrotina baseado na instância de registro de ativação descrito por Sebesta no livro ```Concepts of Programming Languages. 10 ed. Pearson.```.
 
 Cada instrução de máquina possui 64 bits de comprimento, portanto deve-se reservar duas posições da memória para cada instrução.
 Para escrever um código aceito pela máquina deve-se armazenar todas as instruções na memória principal e começar com o seguinte trecho:
@@ -108,4 +118,11 @@ A máquina possui posições da memória e registradores reservados pela máquin
 * Registradores ```0``` à ```4``` e registrador ```9``` são utilizados nas funções;
 * Registradores ```f9``` à ```ff``` são utilizados para auxiliar na manipulação dos registros de ativação.
 
-Para exemplificar o funcionamento da máquina, no arquivo fibonacci-recursivo.c encontra-se um código que executa o algoritmo fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33 (apenas altere o valor da variável ```a```).
+Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquina e serão descritos abaixo:
+* fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 64 (apenas altere o valor da variável ```a```);
+* fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33 (apenas altere o valor da variável ```a```);
+* fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 70 (apenas altere o valor da RAM[0xd]);
+* fartorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 70 (apenas altere o valor da RAM[0xd]);
+* soma5intpos.c: calcula a soma dos primeiros 5 inteiros positivos;
+* soma-cubo-5intpos.c: calcula a soma do cubo dos 5 primeiros inteiros positivos;
+* soma-quad-5intpos.c: calcula a soma do quadrado dos 5 primeiros inteiros positivos.
