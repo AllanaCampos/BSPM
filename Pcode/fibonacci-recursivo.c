@@ -6,7 +6,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<time.h>
 #define MAX_INSTRUCTIONS 50 // Define your own
 #define STACKSIZE 1024
 
@@ -42,30 +41,11 @@ int getInstructionCode(char *c);
 char * getInstructionName(int inst);
 void pcode(int aa);
 int main(){
-    FILE *times;
-    times = fopen("seconds.txt", "w");
-    int aa = 0;
-    time_t t_ini, t_fim;
-    float trec = 0;
-    while(trec < 60){
-        t_ini = time(NULL); 
-        pcode(aa);
-        t_fim = time(NULL);
-        trec = difftime(t_fim, t_ini);
-        fprintf(times, "%d\t%f\n", aa, trec );
-        aa++;
-    }
-    fflush(times);
-    fclose(times);
-    return 0;
-}
-
-void pcode (int aa){
+	int aa = 5;
 	printf("start pl/0              stack\n");
-    // Parametros
-    h = 0; 
-    t = -1; b = 0; p = 0; 
-    code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 5;     //INT 0 5 // main
+    	h = 0; 
+    	t = -1; b = 0; p = 0; 
+    	code[ 0].f = 5;     code[ 0].l = 0;     code[ 0].a = 5;     //INT 0 5 // main
 	code[ 1].f = 0;     code[ 1].l = 0;     code[ 1].a = aa;    //LIT 0 3
 	code[ 2].f = 3;     code[ 2].l = 0;     code[ 2].a = 8;     //STO 0 8 // passagem de parametro do main para fibonacci
 	code[ 3].f = 4;     code[ 3].l = 0;     code[ 3].a = 7;     //CAL 0 7
@@ -162,6 +142,7 @@ void pcode (int aa){
         printf(" %3d" , h);
     }
     printf("\nend pl/0                stack\n");
+    return 0;
 }
 
 
