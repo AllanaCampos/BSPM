@@ -79,7 +79,9 @@ Os arquivos presentes na pasta contém o algoritmo da máquina virtual e código
 
 ## AllanaVM
 
-![alt text](AllanaVM/Logo.png)
+![Logo](AllanaVM/Logo.png)
+
+
 AllanaVM engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
 
 As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits.
