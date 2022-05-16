@@ -1,5 +1,5 @@
 # VM
-Este repositório contém 3 pastas, cada uma representando uma máquina virtual. 
+Este repositório contém 3 pastas representando uma máquina virtual e uma pasta com a logo da máquina AllanaVM. 
 
 Na pasta Pcode contém a máquina virtual especificada por Nicklaus Wirth em C, a mesma pode ser encontrada na linguagem pascal em [https://en.wikipedia.org/wiki/P-code_machine](https://en.wikipedia.org/wiki/P-code_machine).
 
@@ -84,7 +84,7 @@ Os arquivos presentes na pasta contém o algoritmo da máquina virtual e código
 
 AllanaVM engloba a arquitetura da máquina descrita por Brookshear e as instruções da máquina Pcode especificada por Nicklaus Wirth.
 
-As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits.
+As instruções implementadas da Pcode foram armazenadas na memória RAM da máquina, para isso foi necessário a expansão da memória RAM que passou de 256 células de 8 bits cada para 65536 células de 32 bits. A AllanaVM também tem sua versão expandida para 64 bits.
 
 A máquina também apresenta um sistema de chamada e retorno de subrotina baseado na instância de registro de ativação descrito por Sebesta no livro ```Concepts of Programming Languages. 10 ed. Pearson.```.
 
@@ -136,3 +136,10 @@ Na pasta encontra-se alguns arquivos que exemplificam o funcionamento da máquin
 * somaxpos.c: calcula a soma dos primeiros x inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```);
 * soma-cubo-xpos.c: calcula a soma do cubo dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 31 (apenas altere o valor da variável ```a```);
 * soma-quad-xpos.c: calcula a soma do quadrado dos x primeiros inteiros positivos, como defautl está o valor 5, que pode ser alterado na linha 30 (apenas altere o valor da variável ```a```).
+
+Na pasta AllanaVM64 encontra-se o algoritmo para a máquina em sua versão de 64 bits e alguns arquivos que exemplificam o funcionamento da máquina e serão descritos abaixo:
+* allanaVM-64.c -> contém a estrutura da máquina;
+* fibonacci-iterativo.c -> calcula os valores da série fibonnaci iterativamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33(apenas altere o valor da variável ```a```);
+* fibonacci-recursivo.c -> calcula os valores da série fibonnaci recursivamente, como entrada está salvo o valor 5, porém pode ser alterado na linha 33(apenas altere o valor da variável ```a```);
+* fartorial-iterativo.c -> calcula o fatorial iterativamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 34 (apenas altere o valor da variável ```a```);
+* fartorial-recursivo.c -> calcula o fatorial recursivamente do valor de entrada, como default está o valor 5, que pode ser alterado na linha 33 (apenas altere o valor da variável ```a```);
