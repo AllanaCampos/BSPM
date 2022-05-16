@@ -1,5 +1,5 @@
 # VM
-Este repositório contém 3 pastas representando uma máquina virtual e uma pasta com a logo da máquina AllanaVM. 
+Este repositório contém 3 pastas, cada uma representando uma máquina virtual.
 
 Na pasta Pcode contém a máquina virtual especificada por Nicklaus Wirth em C, a mesma pode ser encontrada na linguagem pascal em [https://en.wikipedia.org/wiki/P-code_machine](https://en.wikipedia.org/wiki/P-code_machine).
 
