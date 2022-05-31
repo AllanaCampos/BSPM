@@ -1,4 +1,4 @@
-# VM
+# VMs
 Este repositório contém 3 pastas, cada uma representando uma máquina virtual.
 
 Na pasta Pcode contém a máquina virtual especificada por Nicklaus Wirth em C, a mesma pode ser encontrada na linguagem pascal em [https://en.wikipedia.org/wiki/P-code_machine](https://en.wikipedia.org/wiki/P-code_machine).
